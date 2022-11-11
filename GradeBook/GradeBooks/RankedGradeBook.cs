@@ -21,28 +21,28 @@ namespace GradeBook.GradeBooks
 
             var top20PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
                 .Take(numberOfStudents / 5).LastOrDefault();
-            if (averageGrade > top20PercentLevel)
+            if (averageGrade >= top20PercentLevel)
             {
                 return 'A';
             }
             
             var top40PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
                 .Take((int)(numberOfStudents * 0.4)).LastOrDefault();
-            if (averageGrade > top40PercentLevel)
+            if (averageGrade >= top40PercentLevel)
             {
                 return 'B';
             }
             
             var top60PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
                 .Take((int)(numberOfStudents * 0.6)).LastOrDefault();
-            if (averageGrade > top60PercentLevel)
+            if (averageGrade >= top60PercentLevel)
             {
                 return 'C';
             }
             
             var top80PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
                 .Take((int)(numberOfStudents * 0.8)).LastOrDefault();
-            if (averageGrade > top60PercentLevel)
+            if (averageGrade >= top80PercentLevel)
             {
                 return 'D';
             }
