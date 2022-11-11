@@ -27,21 +27,21 @@ namespace GradeBook.GradeBooks
             }
             
             var top40PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
-                .Take(numberOfStudents / (2/5)).LastOrDefault();
+                .Take((int)(numberOfStudents * 0.4)).LastOrDefault();
             if (averageGrade > top40PercentLevel)
             {
                 return 'B';
             }
             
             var top60PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
-                .Take(numberOfStudents / (3/5)).LastOrDefault();
+                .Take((int)(numberOfStudents * 0.6)).LastOrDefault();
             if (averageGrade > top60PercentLevel)
             {
                 return 'C';
             }
             
             var top80PercentLevel = Students.Select(x => x.AverageGrade).OrderByDescending(y => y)
-                .Take(numberOfStudents / (4/5)).LastOrDefault();
+                .Take((int)(numberOfStudents * 0.8)).LastOrDefault();
             if (averageGrade > top60PercentLevel)
             {
                 return 'D';
